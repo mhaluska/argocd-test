@@ -8,7 +8,7 @@ ingress-nginx:
       https: 443
     ingressClassResource:
       default: true
-    replicaCount: 1
+    replicaCount: 3
     service:
       enabled: true
       type: LoadBalancer
