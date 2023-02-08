@@ -1,15 +1,16 @@
-controller:
-  name: controller
-  image:
-    allowPrivilegeEscalation: true
-  containerPort:
-    http: 80
-    https: 443
-  ingressClassResource:
-    default: true
-  replicaCount: 2
-  service:
+ingress-nginx:
+  controller:
+    name: controller
+    image:
+      allowPrivilegeEscalation: true
+    containerPort:
+      http: 80
+      https: 443
+    ingressClassResource:
+      default: true
+    replicaCount: 2
+    service:
+      enabled: true
+      type: LoadBalancer
+  podSecurityPolicy:
     enabled: true
-    type: LoadBalancer
-podSecurityPolicy:
-  enabled: true
